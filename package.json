@@ -1,13 +1,14 @@
 {
   "name": "@shinychang/hooks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/main.js",
   "repository": "https://github.com/ShinyChang/hooks.git",
   "author": "Shiny <contact@shinychang.net>",
   "license": "MIT",
+  "sideEffects": false,
   "scripts": {
     "start": "yarn storybook",
-    "build": "webpack -p",
+    "build": "webpack -p --output-library-target commonjs",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
