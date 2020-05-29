@@ -6,10 +6,12 @@ jest.useFakeTimers();
 
 beforeEach(() => {
   jest.spyOn(window, 'requestAnimationFrame').mockImplementation(cb => setTimeout(cb, 1));
+  jest.spyOn(window, 'cancelAnimationFrame').mockImplementation(id => clearTimeout(id));
 });
 
 afterEach(() => {
   window.requestAnimationFrame.mockRestore();
+  window.cancelAnimationFrame.mockRestore();
 });
 
 test('default fps is 0', () => {
@@ -21,7 +23,7 @@ test('Update fps according to the frame rate', () => {
   const { result } = renderHook(() => useFPS());
   act(() => {
     jest.advanceTimersByTime(60);
-    const dateNowSpy = jest.spyOn(performance, 'now').mockImplementation(() => Date.now() + 1000);
+    const dateNowSpy = jest.spyOn(performance, 'now').mockImplementation(() => Date.now());
     jest.advanceTimersByTime(1);
     dateNowSpy.mockRestore();
   });
@@ -32,7 +34,7 @@ test('Update fps and not over max display frame rate', () => {
   const { result } = renderHook(() => useFPS(30));
   act(() => {
     jest.advanceTimersByTime(60);
-    const dateNowSpy = jest.spyOn(performance, 'now').mockImplementation(() => Date.now() + 1000);
+    const dateNowSpy = jest.spyOn(performance, 'now').mockImplementation(() => Date.now());
     jest.advanceTimersByTime(1);
     dateNowSpy.mockRestore();
   });
