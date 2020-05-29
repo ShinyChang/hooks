@@ -10,6 +10,8 @@
   "scripts": {
     "start": "yarn storybook",
     "build": "babel src -d lib",
+    "test": "jest",
+    "lint": "eslint src",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -26,8 +28,15 @@
     "@storybook/addons": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "babel-loader": "^8.1.0",
+    "eslint": "^7.1.0",
+    "eslint-plugin-react": "^7.20.0",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
     "storybook": "^5.3.19",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@testing-library/react-hooks": "^3.2.1",
+    "react-test-renderer": "^16.13.1"
   }
 }
