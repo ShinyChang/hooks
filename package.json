@@ -1,0 +1,29 @@
+{
+  "name": "@shinychang/hooks",
+  "version": "0.1.0",
+  "main": "dist/main.js",
+  "repository": "https://github.com/ShinyChang/hooks.git",
+  "author": "Shiny <contact@shinychang.net>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn storybook",
+    "build": "webpack -p",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.1",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "prettier": "^2.0.5",
+    "storybook": "^5.3.19",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
