@@ -10,8 +10,9 @@ const useFPS = (maxDisplayFrameRate = 60) => {
     const frame = () => {
       const now = performance.now();
       if (lastTime + 1000 <= now) {
-        if (mounted && count !== fps) {
-          setFPS(Math.min(count, maxDisplayFrameRate));
+        const displayFps = Math.min(count, maxDisplayFrameRate);
+        if (mounted && displayFps !== fps) {
+          setFPS(displayFps);
         }
         lastTime = now;
         count = 0;

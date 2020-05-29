@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useFPS } from '../src';
 
 export default {
